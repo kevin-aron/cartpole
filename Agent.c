@@ -15,7 +15,7 @@
 #define POLE_LEN 0.5
 
 #define MaxMemory 100000
-#define BATCH_SIZE 10000
+#define BATCH_SIZE 1000
 
 typedef struct{
     float pos_x;
@@ -85,6 +85,7 @@ int main(){
         set_restate(px,py,pz,ax,ay,az);
         fail=0;
         int total_reward=0;
+        int cnt=0;
         while(!fail){
             //通过policy策略选择动作
             int action=greedypolicy(&bpnn,s);
